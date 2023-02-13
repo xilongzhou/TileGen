@@ -62,15 +62,18 @@ python projector.py --name Stone --ckpt 800000.pt --starting_height_size 4 --mod
 
 ```
 
-The results of stone, for example, will be saved to `output/stone/project/$save_folder`, in each folder, `opt_D`,`opt_H`,`opt_N`,`opt_R`,`opt_M` represent final optimized diffuse, height, normal, roughness and metallic (for metal only); `_t` represetns the 2x2 tiled version of maps and re-rendered;
-`scale.pt` save the optimzed parameters of height-normal-scale and light intensty scale (only when use `--opt_scale`)
+The results of stone, for example, will be saved to `output/stone/project/$save_folder`, in each folder, `opt_D`,`opt_H`,`opt_N`,`opt_R`,`opt_M` represent final optimized diffuse, height, normal, roughness and metallic (for metal only); 
+suffix `_t` represetns the 2x2 tiled version of maps and re-rendered; `scale.pt` save the optimzed parameters of height-normal-scale and light intensty scale (only when use `--opt_scale`)
 
 For some arguments:
 
 ```
 --data_path: load the target example from this directory
+
 --opt_scale: optimized both height-to-normal scale and light intensity scale
+
 --init: ['embed', 'mean', 'rand'] initialization of latent space, for unconditional models we use predefine 'embed'; for conditional models, use either 'mean' or 'rand';
+
 --inter_shift: keep shifting maps every other iterations during optimization
 
 ``` 
@@ -110,10 +113,14 @@ python -m torch.distributed.launch --nproc_per_node=4 train_scene.py Stone_nocon
 For some arguments:
 
 ```
---channel_multiplier: [default 2] control the channel number in Generator;
+--channel_multiplier: [default 2] control the channel number in Generator
+
 --starting_height_size: [default 32] encoder feature passed to generator, support 4,8,16,32
+
 --tile_crop: tile cropping and shifting during training
+
 --style_regularize: control style for conditional model
+
 --shift_N: control style for conditional model
 ```
 ## Citation
