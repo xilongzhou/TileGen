@@ -63,7 +63,7 @@ python projector.py --name Stone --ckpt 800000.pt --starting_height_size 4 --mod
 ```
 
 The results of stone, for example, will be saved to `output/stone/project/$save_folder`, in each folder, `opt_D`,`opt_H`,`opt_N`,`opt_R`,`opt_M` represent final optimized diffuse, height, normal, roughness and metallic (for metal only); 
-suffix `_t` represetns the 2x2 tiled version of maps and re-rendered; `scale.pt` save the optimzed parameters of height-normal-scale and light intensty scale (only when use `--opt_scale`)
+suffix `_t` represents the 2x2 tiled version of maps and re-rendered images; `scale.pt` save the optimzed parameters of height-normal-scale and light intensty scale (only when use `--opt_scale`)
 
 For some arguments:
 
