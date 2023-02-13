@@ -39,6 +39,12 @@ python projector.py --name Metal --ckpt 800000.pt --starting_height_size 4 --mod
 
 ```
 
+Where
+
+```
+--pat_path: reprents the path of input conditional patterns
+
+```
 The results of stone, for example, will be saved to `output/stone/sample/$save_folder`
 
 For inverse rendering, please run these commands:
