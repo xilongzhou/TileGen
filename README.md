@@ -105,14 +105,14 @@ Below is an examples of unconditional dataset (height + diffuse + roughness + re
 To trian conditional model (like leather), please run this command:
 
 ```
-python -m torch.distributed.launch --nproc_per_node=$gpu_num train_scene.py $name --batch_size 4 --nocond_z --tile_crop --aug_data --lr 0.0002 --vgg_regularize 0.0 --style_regularize 1.0 --channel_multiplier 1 --shiftN --cond_D --circular --starting_height_size 4 --dataset Leather
+python -m torch.distributed.launch --nproc_per_node=$gpu_num train_scene.py $name --batch_size $batch_per_gpu --nocond_z --tile_crop --aug_data --lr 0.0002 --vgg_regularize 0.0 --style_regularize 1.0 --channel_multiplier 1 --shiftN --cond_D --circular --starting_height_size 4 --dataset Leather
 ```
 
 To train unconditional model (like stone), please run this command:
 
 ```
 
-python -m torch.distributed.launch --nproc_per_node=4 train_scene.py $name --batch_size 4 --nocond_z --channel_multiplier 1 --tile_crop --aug_data --lr 0.0002 --vgg_regularize 0.0 --style_regularize 0.0 --no_cond --circular --starting_height_size 4 --dataset Stone
+python -m torch.distributed.launch --nproc_per_node=$gpu_num train_scene.py $name --batch_size $batch_per_gpu --nocond_z --channel_multiplier 1 --tile_crop --aug_data --lr 0.0002 --vgg_regularize 0.0 --style_regularize 0.0 --no_cond --circular --starting_height_size 4 --dataset Stone
 
 ```
 
